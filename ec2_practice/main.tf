@@ -22,7 +22,7 @@ data "aws_security_group" "default" {
   for_each = var.components
 
   name = "${each.key}_group"
-  description: "This is for ${each.key}_group"
+  description = "This is for ${each.key}_group"
 
   ingress  {
     form_port   = 22
