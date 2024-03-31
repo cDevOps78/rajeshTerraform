@@ -4,7 +4,7 @@ variable "components" {
       instance_type = "t2.micro"
       tags          = {
         Name    = "frontend"
-        project = "expense"
+        project = "expense-frontend"
       }
     }
     backend = {
