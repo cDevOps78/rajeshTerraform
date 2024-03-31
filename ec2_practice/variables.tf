@@ -15,7 +15,7 @@ variable "components" {
       }
     }
     mysql = {
-      instance_type = "t3.medium"
+      instance_type = "t3.small"
       tags          = {
         Name    = "mysql"
         project = "expense"
