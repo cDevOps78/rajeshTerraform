@@ -13,5 +13,5 @@ provider "aws" {
 #}
 
 output "name" {
-  value = var.components["frontend"]["tags"][" project"]
+  value = var.components["frontend"]["tags"]["project"]
 }
