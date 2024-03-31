@@ -6,6 +6,7 @@ variable "components" {
         Name    = "frontend"
         project = "expense-frontend"
       }
+      port = 80
     }
     backend = {
       instance_type = "t2.small"
@@ -13,6 +14,7 @@ variable "components" {
         Name    = "backend"
         project = "expense"
       }
+      port = 8080
     }
     mysql = {
       instance_type = "t3.small"
@@ -20,6 +22,8 @@ variable "components" {
         Name    = "mysql"
         project = "expense"
       }
+      port = 3306
     }
+
   }
 }

@@ -33,6 +33,14 @@ resource "aws_security_group" "example" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+
+  ingress {
+    from_port   = each.value["port"]
+    to_port     = each.value["port"]
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
@@ -44,5 +52,7 @@ resource "aws_security_group" "example" {
     Name = "${each.key}"
   }
 }
+
+   # aws_security_group.example["frontend"] will be created
 
 
