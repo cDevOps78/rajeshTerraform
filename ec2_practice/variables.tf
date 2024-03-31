@@ -14,5 +14,12 @@ variable "components" {
         project = "expense"
       }
     }
+    mysql = {
+      instance_type = "t3.medium"
+      tags          = {
+        Name    = "mysql"
+        project = "expense"
+      }
+    }
   }
 }
