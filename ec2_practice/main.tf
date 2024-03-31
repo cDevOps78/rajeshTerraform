@@ -7,6 +7,7 @@ resource "aws_instance" "frontend" {
 
   ami           = "ami-009e46eef82e25fef"
   # instance_type = lookup(each.value, "instance_type", "t3.medium" )
-  instance_type = var.components[each.key].instance_type
+  # instance_type = var.components[each.key].instance_type
+  instance_type = var.components[each.value].instance_type
   tags          = lookup(lookup(var.components, each.key, "nokey"),"tags",{Name: "Default", Project: "OtherProject"})
 }
