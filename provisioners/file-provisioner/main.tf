@@ -6,8 +6,9 @@ resource "aws_instance" "prod_server" {
   }
 
   provisioner "remote-exec" {
+    on_failure = continue
     inline = [
-      "sudo dnf install nginx"
+      "dnf install nginx -y"
     ]
   }
   connection {
