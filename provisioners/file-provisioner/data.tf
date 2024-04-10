@@ -9,5 +9,5 @@ data "aws_ami_ids" "devops-practice" {
 }
 
 output "ami" {
-  value = data.aws_ami_ids.devops-practice.ids
+  value = data.aws_ami_ids.devops-practice.ids[0]
 }
