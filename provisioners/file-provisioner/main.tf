@@ -20,18 +20,19 @@ resource "null_resource" "file" {
     destination = "/tmp/script1.sh"
   }
 }
-#
-#resource "null_resource" "rop1" {
-#  provisioner "remote-exec" {
-#    connection {
-#      type     = "ssh"
-#      user     = "ec2-user"
-#      password = "DevOps321"
-#      host     = aws_instance.prod_server.private_ip
-#      port     = 22
-#    }
-#    inline = [
-#      "sudo bash /tmp/script1.sh"
-#    ]
-#  }
-#}
+
+resource "null_resource" "rop1" {
+  provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      user     = "ec2-user"
+      password = "DevOps321"
+      host     = aws_instance.prod_server.private_ip
+      port     = 22
+    }
+    inline = [
+       "#!/bin/bash",
+      "sudo bash /tmp/script1.sh"
+   ]
+  }
+}
