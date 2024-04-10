@@ -12,9 +12,10 @@ resource "aws_instance" "prod_server" {
     host     = self.private_ip
   }
 
-  provisioner "file" {
-    source      = "index.html"
-    destination = "/tmp/index.html"
+  provisioner "remote-exec" {
+   inline = [
+        "sudo dnf install nginx -y"
+   ]
   }
 
 }
