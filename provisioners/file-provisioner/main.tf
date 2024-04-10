@@ -4,20 +4,12 @@ resource "aws_instance" "prod_server" {
   tags          = {
     Name = "prod-server"
   }
+}
 
-  provisioner "remote-exec" {
-    on_failure = continue
-    inline = [
-      "sudo dnf install nginx -y",
-      "sudo systemctl start nginx"
-    ]
-  }
-  connection {
-    type     = "ssh"
-    user     = "ec2-user"
-    password = "DevOps321"
-    host     = self.private_ip
-    port     = 22
+resource "null_resource" "file" {
+  provisioner "file" {
+    source      = "script1.sh"
+    destination = "/tmp/script1.sh"
   }
 }
 
@@ -31,8 +23,7 @@ resource "null_resource" "rop1" {
       port     = 22
     }
     inline = [
-      "sudo dnf install nginx -y",
-      "sudo systemctl start nginx"
+      "sudo bash /tmp/script1.sh"
     ]
   }
 }
