@@ -12,7 +12,7 @@ resource "aws_instance" "prod_server" {
     host     = self.public_ip
   }
 
-  provisioner "remote-exec" {
+  provisioner "file" {
     source      = "index.html"
     destination = "/tmp/index.html"
   }
