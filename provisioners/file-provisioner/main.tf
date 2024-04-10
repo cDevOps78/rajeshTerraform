@@ -5,15 +5,8 @@ resource "aws_instance" "prod_server" {
     Name = "prod-server"
   }
 
-  connection {
-    type     = "ssh"
-    user     = "ec2-user"
-    password = "DevOps321"
-    host     = self.public_ip
-  }
-
   provisioner "file" {
-    source      = "index.html"
+    source      = "./index.html"
     destination = "/tmp/index.html"
   }
 
