@@ -31,6 +31,7 @@ resource "null_resource" "rop1" {
       port     = 22
     }
     inline = [
+      "#!/bin/bash",
       "sudo bash /tmp/script1.sh"
    ]
   }
