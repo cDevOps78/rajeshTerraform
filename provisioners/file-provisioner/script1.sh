@@ -1,3 +1,3 @@
 dnf install nginx -y
-dnf systemctl start nginx
-dnf systemctl enable nginx
+systemctl start nginx
+systemctl enable nginx
