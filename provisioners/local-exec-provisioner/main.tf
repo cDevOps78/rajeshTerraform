@@ -13,5 +13,6 @@ resource "null_resource" "local_exec" {
 resource "null_resource" "local_exec1" {
   provisioner "local-exec" {
     command = "echo this is apply command"
+    quite = true
   }
 }
