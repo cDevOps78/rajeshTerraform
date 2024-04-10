@@ -15,6 +15,7 @@ resource "aws_instance" "prod_server" {
     user     = "root"
     password = "DevOps321"
     host     = self.public_ip
+    port     = 22
   }
 
 }
