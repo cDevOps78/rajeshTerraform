@@ -7,7 +7,7 @@ resource "aws_instance" "prod_server" {
 }
 
 resource "null_resource" "file" {
-
+  depends_on = [null_resource.rop1]
   connection {
     type     = "ssh"
     user     = "ec2-user"
