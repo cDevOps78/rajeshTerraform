@@ -12,7 +12,7 @@ resource "aws_instance" "prod_server" {
   }
   connection {
     type     = "ssh"
-    user     = "root"
+    user     = "ec2-user"
     password = "DevOps321"
     host     = self.public_ip
     port     = 22
