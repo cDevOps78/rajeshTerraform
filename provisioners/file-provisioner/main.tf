@@ -7,7 +7,7 @@ resource "aws_instance" "prod_server" {
 }
 
 resource "null_resource" "file" {
-  depends_on = [null_resource.rop1]
+
 
   connection {
     type     = "ssh"
@@ -23,6 +23,8 @@ resource "null_resource" "file" {
 }
 
 resource "null_resource" "rop1" {
+  depends_on = [null_resource.file]
+
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
