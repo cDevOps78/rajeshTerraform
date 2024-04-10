@@ -5,5 +5,13 @@ resource "null_resource" "local_exec" {
       name = "chaithanya"
       tool = "terraform"
     }
+    when = destroy
+  }
+}
+
+
+resource "null_resource" "local_exec1" {
+  provisioner "local-exec" {
+    command = "echo this is apply command"
   }
 }
