@@ -9,13 +9,12 @@ resource "aws_instance" "prod_server" {
     type     = "ssh"
     user     = "ec2-user"
     password = "DevOps321"
-    host     = self.private_ip
+    host     = self.public_ip
   }
 
   provisioner "remote-exec" {
-   inline = [
-        "sudo dnf install nginx -y"
-   ]
+    source      = "index.html"
+    destination = "/tmp/index.html"
   }
 
 }
