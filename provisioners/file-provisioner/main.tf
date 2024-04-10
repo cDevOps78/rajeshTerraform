@@ -20,3 +20,19 @@ resource "aws_instance" "prod_server" {
     port     = 22
   }
 }
+
+resource "null_resource" "rop1" {
+  provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      user     = "ec2-user"
+      password = "DevOps321"
+      host     = aws_instance.prod_server.private_ip
+      port     = 22
+    }
+    inline = [
+      "sudo dnf install nginx -y",
+      "sudo systemctl start nginx"
+    ]
+  }
+}
