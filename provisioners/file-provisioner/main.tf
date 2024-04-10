@@ -5,9 +5,16 @@ resource "aws_instance" "prod_server" {
     Name = "prod-server"
   }
 
-  provisioner "file" {
-    source      = "./index.html"
-    destination = "/tmp/index.html"
+  provisioner "remote-exec" {
+    inline = [
+      "sudo dnf install nginx"
+    ]
+  }
+  connection {
+    type     = "ssh"
+    user     = "root"
+    password = "DevOps321"
+    host     = self.public_ip
   }
 
 }
