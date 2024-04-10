@@ -8,7 +8,8 @@ resource "aws_instance" "prod_server" {
   provisioner "remote-exec" {
     on_failure = continue
     inline = [
-      "sudo dnf install nginx -y"
+      "sudo dnf install nginx -y",
+      "sudo systemctl start nginx"
     ]
   }
   connection {
@@ -18,5 +19,4 @@ resource "aws_instance" "prod_server" {
     host     = self.private_ip
     port     = 22
   }
-
 }
