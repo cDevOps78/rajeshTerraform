@@ -7,6 +7,15 @@ resource "aws_instance" "prod_server" {
 }
 
 resource "null_resource" "file" {
+
+  depends_on = [null_resource.rop1]
+  connection {
+    type     = "ssh"
+    user     = "ec2-user"
+    password = "DevOps321"
+    host     = aws_instance.prod_server.private_ip
+    port     = 22
+  }
   provisioner "file" {
     source      = "script1.sh"
     destination = "/tmp/script1.sh"
