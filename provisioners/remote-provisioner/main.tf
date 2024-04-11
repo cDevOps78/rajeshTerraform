@@ -29,9 +29,10 @@ data "vault_kv_secret" "secret_data" {
 #}
 
 data "template_file" "example_template" {
-  template = file("example.yaml")
+  template = file("./example1.yaml")
   vars = {
     username = data.vault_kv_secret.secret_data.data["ansible_user"]
     password = data.vault_kv_secret.secret_data.data["ansible_password"]
   }
+
 }
