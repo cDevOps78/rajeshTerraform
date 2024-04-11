@@ -20,7 +20,8 @@
 resource "null_resource" "first" {
   provisioner "local-exec" {
     command = "echo this is $Name-provisioner"
-    environment = {
+    interpreter = ["/bin/bash","-c"]
+  environment = {
       Name = "first"
     }
   }
