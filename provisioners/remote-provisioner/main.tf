@@ -28,11 +28,17 @@ data "vault_kv_secret" "secret_data" {
 #  filename = "/tmp/hello.secrets1"
 #}
 
-data "template_file" "example_template" {
-  template = file("./example1.tmpl")
-  vars = {
-    username = data.vault_kv_secret.secret_data.data["ansible_user"]
-    password = data.vault_kv_secret.secret_data.data["ansible_password"]
-  }
+#data "template_file" "example_template" {
+#  template = file("./example1.tmpl")
+#  vars = {
+#    username = data.vault_kv_secret.secret_data.data["ansible_user"]
+#    password = data.vault_kv_secret.secret_data.data["ansible_password"]
+#  }
+#
+#}
 
+resource "null_resource" "pass" {
+  provisioner "local-exec" {
+    command = "echo User- ${data.vault_kv_secret.secret_data.data["ansible_user"]}"
+  }
 }
