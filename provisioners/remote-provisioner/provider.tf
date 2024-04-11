@@ -1,6 +1,6 @@
-provider "aws" {
-  region = "us-east-1"
-}
+#provider "aws" {
+#  region = "us-east-1"
+#}
 
 provider "vault" {
   address = "https://vault-internal.azcart.online:8200"
