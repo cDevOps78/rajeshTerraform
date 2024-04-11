@@ -28,6 +28,7 @@ resource "null_resource" "first" {
 
 resource "null_resource" "second" {
   provisioner "local-exec" {
+    on_failure = continue
     command = "bash script2.sh"
     environment = {
       Name = "first"
