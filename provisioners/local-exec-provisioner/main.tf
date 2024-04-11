@@ -38,8 +38,8 @@ resource "null_resource" "second" {
 }
 
 resource "null_resource" "three" {
-  depends_on = [null_resource.first]
   provisioner "local-exec" {
+    when   = destroy
     command = "echo this is $Name-provisioner"
     environment = {
       Name = "three"
