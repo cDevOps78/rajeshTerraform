@@ -18,10 +18,10 @@
 #  }
 #}
 
-
-data "vault_kv_secret" "secret_data" {
-  path = "common/ssh"
-}
+#
+#data "vault_kv_secret" "secret_data" {
+#  path = "common/ssh"
+#}
 
 #resource "local_file" "foo" {
 #  content  = data.vault_kv_secret.secret_data.data["ansible_user"]
