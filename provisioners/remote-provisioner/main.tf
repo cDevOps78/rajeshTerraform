@@ -37,8 +37,13 @@ data "vault_kv_secret" "secret_data" {
 #
 #}
 
-resource "null_resource" "pass" {
-  provisioner "local-exec" {
-    command = "echo User- ${data.vault_kv_secret.secret_data.data["ansible_user"]}"
-  }
+#resource "null_resource" "pass" {
+#  provisioner "local-exec" {
+#    command = "echo User- ${data.vault_kv_secret.secret_data.data["ansible_user"]}"
+#  }
+#}
+
+resource "local_file" "foo" {
+  content  = "ansible_user: ${data.vault_kv_secret.secret_data.data["ansible_user"]}\nansible_password: ${data.vault_kv_secret.secret_data.data["ansible_password"]}"
+  filename = "./hello.secrets1"
 }
