@@ -1,0 +1,6 @@
+- name: To run first terraform-ansible Playbook
+  hosts: localhost
+  tasks:
+    - name: Terraform-Ansible-Vault Secrets retrive
+      ansible.builtin.debug:
+        msg: "This is User-{{ ansible_user }} & Password-{{ ansible_password }}"
