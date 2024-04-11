@@ -45,5 +45,5 @@ data "vault_kv_secret" "secret_data" {
 
 resource "local_file" "foo" {
   content  = "ansible_user: ${data.vault_kv_secret.secret_data.data["ansible_user"]}\nansible_password: ${data.vault_kv_secret.secret_data.data["ansible_password"]}"
-  filename = "./hello.secrets1"
+  filename = "./secrets.yaml"
 }
