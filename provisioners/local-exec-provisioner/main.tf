@@ -37,6 +37,7 @@ resource "null_resource" "second" {
 }
 
 resource "null_resource" "three" {
+  depends_on = [null_resource.first]
   provisioner "local-exec" {
     command = "echo this is $Name-provisioner"
     environment = {
