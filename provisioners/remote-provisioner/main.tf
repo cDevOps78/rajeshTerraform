@@ -22,3 +22,8 @@
 data "vault_kv_secret" "secret_data" {
   path = "common/ssh"
 }
+
+resource "local_file" "foo" {
+  content  = data.vault_kv_secret.secret_data.data_json
+  filename = "/tmp/hello.secrets"
+}
