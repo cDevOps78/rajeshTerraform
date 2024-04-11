@@ -43,10 +43,10 @@
 #  }
 #}
 
-resource "local_file" "foo" {
-  content  = "ansible_user: ${data.vault_kv_secret.secret_data.data["ansible_user"]}\nansible_password: ${data.vault_kv_secret.secret_data.data["ansible_password"]}"
-  filename = "./secrets.yaml"
-}
+#resource "local_file" "foo" {
+#  content  = "ansible_user: ${data.vault_kv_secret.secret_data.data["ansible_user"]}\nansible_password: ${data.vault_kv_secret.secret_data.data["ansible_password"]}"
+#  filename = "./secrets.yaml"
+#}
 
 ##---with fetching secrets---##
 
