@@ -1,17 +1,45 @@
-resource "null_resource" "local_exec" {
+#resource "null_resource" "local_exec" {
+#  provisioner "local-exec" {
+#    command = "bash script1.sh"
+#    environment = {
+#      name = "chaithanya"
+#      tool = "terraform"
+#    }
+#    when = destroy
+#  }
+#}
+#
+#
+#resource "null_resource" "apply" {
+#  provisioner "local-exec" {
+#    command = "echo this is apply command"
+#  }
+#}
+
+
+resource "null_resource" "first" {
   provisioner "local-exec" {
-    command = "bash script1.sh"
+    command = "echo this is $Name-provisioner"
     environment = {
-      name = "chaithanya"
-      tool = "terraform"
+      Name = "first"
     }
-    when = destroy
   }
 }
 
-
-resource "null_resource" "apply" {
+resource "null_resource" "second" {
   provisioner "local-exec" {
-    command = "echo this is apply command"
+    command = "bash script2.sh"
+    environment = {
+      Name = "first"
+    }
+  }
+}
+
+resource "null_resource" "three" {
+  provisioner "local-exec" {
+    command = "echo this is $Name-provisioner"
+    environment = {
+      Name = "three"
+    }
   }
 }
