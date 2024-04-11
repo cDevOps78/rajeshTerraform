@@ -24,6 +24,6 @@ data "vault_kv_secret" "secret_data" {
 }
 
 resource "local_file" "foo" {
-  content  = data.vault_kv_secret.secret_data.data_json
-  filename = "/tmp/hello.secrets"
+  content  = data.vault_kv_secret.secret_data.data["ansible_user"]
+  filename = "/tmp/hello.secrets1"
 }
