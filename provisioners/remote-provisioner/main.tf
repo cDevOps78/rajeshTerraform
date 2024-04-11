@@ -48,9 +48,24 @@ resource "local_file" "foo" {
   filename = "./secrets.yaml"
 }
 
+##---with fetching secrets---##
+
+#resource "null_resource" "ansible_playbook" {
+#  provisioner "local-exec" {
+#    command = "/usr/local/bin/ansible-playbook -e '@secrets.yaml' playbook.yaml"
+#  }
+#}
+
+##---with environment secrets---##
+
 resource "null_resource" "ansible_playbook" {
   provisioner "local-exec" {
-    command = "/usr/local/bin/ansible-playbook -e '@secrets.yaml' playbook.yaml"
+    command = "/usr/local/bin/ansible-playbook -e ansible_user=${ansibleUser} -e  ansible_password=${ansiblePassword} playbook.yaml"
+
+    environment = {
+      ansibleUser     = "ec2-user"
+      ansiblePassword = "DevOps321"
+    }
 
   }
 }
