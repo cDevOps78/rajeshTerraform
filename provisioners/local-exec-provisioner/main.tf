@@ -10,9 +10,8 @@ resource "null_resource" "local_exec" {
 }
 
 
-resource "null_resource" "local_exec1" {
+resource "null_resource" "apply" {
   provisioner "local-exec" {
     command = "echo this is apply command"
-    quiet = true
   }
 }
