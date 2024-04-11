@@ -51,5 +51,6 @@ resource "local_file" "foo" {
 resource "null_resource" "ansible_playbook" {
   provisioner "local-exec" {
     command = "ansible-playbook -e '@secrets.yaml' playbook.yaml"
+    interpreter = ["/bin/bash","-c"]
   }
 }
