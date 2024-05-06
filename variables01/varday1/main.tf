@@ -4,7 +4,7 @@ output "name" {
 }
 
 output "ami-is" {
-  value = strcontains(var.ami-id,"ami")
+  value = strcontains(var.ami-id,"amia")
 }
 
 # output "name-length" {
