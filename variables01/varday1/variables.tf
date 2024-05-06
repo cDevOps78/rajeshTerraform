@@ -1,6 +1,6 @@
 variable "name" {
     default = "chaithanya/ram"
-    sensitive = true
+   # sensitive = true
 }
 
 # variable "splits" {
