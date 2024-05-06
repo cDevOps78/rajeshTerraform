@@ -3,5 +3,10 @@ output "name" {
 }
 
 output "name-length" {
-    value = var.length 
+    value = length(var.name) 
+}
+
+output "slpit" {
+  value = split("/",var.name)
+  
 }
