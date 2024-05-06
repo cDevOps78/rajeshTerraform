@@ -4,7 +4,7 @@ output "name" {
 }
 
 output "ami-is" {
-  value = startswith(var.ami-id,"ami-") 
+  value = startswith(var.ami-id,"Ami-") 
 }
 
 # output "name-length" {
