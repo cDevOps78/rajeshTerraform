@@ -7,6 +7,6 @@ output "name-length" {
 }
 
 output "slpit" {
-  value = split("/",var.name)[0]
+  value = length(split("/",var.name))
   
 }
