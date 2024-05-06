@@ -4,7 +4,7 @@ output "name" {
 }
 
 output "ami-is" {
-  value = can(length(var.ami-id) > 70 )
+  value = (length(var.ami-id) > 70) 
 }
 
 # output "name-length" {
