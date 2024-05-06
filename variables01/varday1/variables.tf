@@ -9,3 +9,5 @@ variable "splits" {
 variable "length" {
   default = "${length(var.name)}"
 }
+
+#
