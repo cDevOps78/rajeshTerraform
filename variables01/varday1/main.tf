@@ -1,5 +1,5 @@
 output "name" {
-  value = var.name
+  value = nonsensitive(var.name)
 }
 
 output "name-length" {
