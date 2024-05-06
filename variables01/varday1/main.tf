@@ -4,7 +4,7 @@ output "name" {
 }
 
 output "ami-is" {
-  value = (length(var.ami-id) > 70) 
+  value = startswith(var.ami-id,"ami-") 
 }
 
 # output "name-length" {
@@ -15,3 +15,4 @@ output "ami-is" {
 # output "slpit" {
 #   # value = nonsensitive(length(split("/",var.name)))  
 # }
+
