@@ -3,9 +3,9 @@ variable "name" {
 }
 
 variable "splits" {
-  default = split("/", var.name)[0]
+  default = "${split("/", var.name)[0]}"
 }
 
 variable "length" {
-  default = length(var.name)
+  default = "${length(var.name)}"
 }
