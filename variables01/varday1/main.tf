@@ -4,7 +4,7 @@ output "name" {
 }
 
 output "ami-is" {
-  value = can(strcontains(var.ami-id,"ami-"))
+  value = can(strcontains(var.ami-id,"chaitu"))
 }
 
 # output "name-length" {
