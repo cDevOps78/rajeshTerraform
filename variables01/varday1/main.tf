@@ -1,6 +1,6 @@
 output "name" {
   # value = nonsensitive(var.name)
-  value = strcontains("/", var.name)
+  value = strcontains(var.name, "/")
 }
 
 # output "name-length" {
