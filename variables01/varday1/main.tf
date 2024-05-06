@@ -3,6 +3,10 @@ output "name" {
   value = strcontains(var.name, "-")
 }
 
+output "ami-is" {
+  value = strcontains(var.ami-id,"ami-")
+}
+
 # output "name-length" {
 #     # value = nonsensitive(length(var.name))
 #     value = n(var.name) 

@@ -15,4 +15,6 @@ variable "name" {
 #   default = "${length(var.name)}"
 # }
 
-#
+variable "ami-id" {
+  default = "ami-4859459437438478493"
+}
