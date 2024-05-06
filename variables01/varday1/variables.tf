@@ -1,5 +1,5 @@
 variable "name" {
-    default = "chaithanya/ram"
+    default = "chaithanya-ram"
    # sensitive = true
 }
 
