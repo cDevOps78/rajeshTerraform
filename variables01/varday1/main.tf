@@ -7,6 +7,6 @@ output "name-length" {
 }
 
 output "slpit" {
-  value = length(split("/",var.name))
+  value = nonsensitive(length(split("/",var.name)))
   
 }
