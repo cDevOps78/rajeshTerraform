@@ -3,7 +3,7 @@ output "name" {
 }
 
 output "name-length" {
-    value = length(var.name) 
+    value = nonsensitive(length(var.name)) 
 }
 
 output "slpit" {
