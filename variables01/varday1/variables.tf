@@ -1,7 +1,7 @@
 variable "name" {
     default = "chaithanya-ram-ram1"
     validation {
-      condition = length(split("-".var.name)) <= 2
+      condition = length(split("-".var.name)) < 3
       error_message = "The length of name should be less than 2" 
     }
    # sensitive = true
