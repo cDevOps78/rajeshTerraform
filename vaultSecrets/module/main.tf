@@ -6,7 +6,7 @@ resource "vault_mount" "secretEngine" {
 }
 
 resource "vault_kv_secret" "secret" {
-  count = var.secretPath
+  for_each = var.secretPath
   path = "${vault_mount.secretEngine.path}/${each.key}"
   data_json = jsonencode("${each.value}")
 }
