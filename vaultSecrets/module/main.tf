@@ -1,5 +1,5 @@
 resource "vault_mount" "secretEngine" {
-  path        = "${var.secretEngine}"
+  path        = var.secretEngine
   type        = "kv"
   options     = { version = "1" }
   description = "KV Version 1 secret engine ${var.secretEngine} mount"
