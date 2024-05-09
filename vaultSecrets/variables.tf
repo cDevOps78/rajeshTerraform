@@ -28,3 +28,8 @@ variable "expense-dev" {
     }
   }
 }
+
+variable "NEW_RELIC_BACKEND" {
+}
+variable "NEW_RELIC_NGINX" { 
+}
