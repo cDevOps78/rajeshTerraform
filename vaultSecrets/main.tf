@@ -5,3 +5,9 @@ module "coomon" {
   secretPath  = var.commonsecrets
 }
 
+module "expense-dev" {
+  source = "./module"
+  secretEngine = "expense-dev"
+  secretPath = var.expense-dev
+}
+
