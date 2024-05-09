@@ -8,6 +8,6 @@ module "coomon" {
 module "expense-dev" {
   source = "./module"
   secretEngine = "expense-dev"
-  secretPath = var.expense-dev
+  secretPath = local.expense-dev
 }
 
