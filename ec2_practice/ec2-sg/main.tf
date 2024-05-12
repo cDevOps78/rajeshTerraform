@@ -38,6 +38,6 @@ resource "null_resource" "sample1" {
              "echo this is chaithnaya 1" &&
              "echo This is chaithnaya 2"
            DOC
-    on_failure = continue
+
   }
 }
