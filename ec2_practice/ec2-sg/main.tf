@@ -32,10 +32,10 @@
 
 ###### on failure ##########
 
-resource "null_resource" "sample" {
+resource "null_resource" "sample1" {
   provisioner "local-exec" {
     command = <<DOC
-             "echo this is chaithnaya 1"
+             "echo this is chaithnaya 1" &&
              "echo This is chaithnaya 2"
            DOC
     on_failure = continue
