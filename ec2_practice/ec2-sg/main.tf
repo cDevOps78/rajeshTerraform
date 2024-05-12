@@ -8,6 +8,10 @@ resource "aws_security_group" "sample-sg" {
   name = "sample-sg1"
   vpc_id = "vpc-0dfa2ee2180ae8e1a"
 
+  lifecycle {
+    create_before_destroy = true
+  }
+
   ingress {
     from_port = 22
     to_port   = 22
