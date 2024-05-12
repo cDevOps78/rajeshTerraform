@@ -5,11 +5,11 @@ resource "aws_instance" "sample" {
 }
 
 resource "aws_security_group" "sample-sg" {
-  name = "sample-sg1"
+  name = "sample-sg2"
   vpc_id = "vpc-0dfa2ee2180ae8e1a"
 
-  lifecycle {
-    create_before_destroy = true
+  timeouts {
+    delete = "1m"
   }
 
   ingress {
