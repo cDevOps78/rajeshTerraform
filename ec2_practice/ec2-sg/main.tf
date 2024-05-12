@@ -34,10 +34,9 @@
 
 resource "null_resource" "sample3" {
   provisioner "local-exec" {
-    command = <<DOC
-             "echo this is chaithnaya 1" &&
-             "echo This is chaithnaya 2"
-           DOC
-
+  command = "echo This is provisioner1"
+  }
+  provisioner "local-exec" {
+    command = "echo This is provisioner2"
   }
 }
