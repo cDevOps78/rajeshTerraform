@@ -5,7 +5,7 @@ resource "aws_instance" "sample" {
 }
 
 resource "aws_security_group" "sample-sg" {
-  name = "sample-sg"
+  name = "sample-sg1"
   vpc_id = "vpc-0dfa2ee2180ae8e1a"
 
   ingress {
