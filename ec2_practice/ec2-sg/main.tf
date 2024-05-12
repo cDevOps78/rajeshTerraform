@@ -35,5 +35,6 @@
 resource "null_resource" "sample1" {
   provisioner "local-exec" {
     command = "echo This is chaithanya && exit 1"
+    on_failure = continue
   }
 }
