@@ -9,5 +9,5 @@
 #}
 
 output "name" {
-  value = "Upper name = upper(var.numbers)"
+  value = "Upper name = ${upper(var.numbers)}"
 }
