@@ -21,5 +21,5 @@ output "dirname" {
 }
 
 output "decode" {
-  value = base64decode(filebase64("VGhpcyBpcyBmaWxlMQpUaGlzIGlzIGZpbGUyClRoaXMgaXMgZmlsZTM="))
+  value = base64decode("VGhpcyBpcyBmaWxlMQpUaGlzIGlzIGZpbGUyClRoaXMgaXMgZmlsZTM=")
 }
