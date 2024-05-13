@@ -1,1 +1,0 @@
-name1 = "auto-chaitu"

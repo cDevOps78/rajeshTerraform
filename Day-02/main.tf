@@ -1,7 +1,4 @@
-output "name" {
-  value = var.name
-}
-
-output "name1" {
-  value = var.name1
+module "sample" {
+  source = "./modules/module1"
+  name   = "Chaithanya"
 }
