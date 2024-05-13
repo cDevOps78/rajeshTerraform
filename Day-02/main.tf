@@ -9,5 +9,5 @@
 #}
 
 output "name" {
-  value = "Upper name = ${strcontains(var.numbers,"tu")}"
+  value = file("./file1")
 }
