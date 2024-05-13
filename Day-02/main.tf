@@ -9,7 +9,7 @@
 #}
 
 output "name" {
-  value = file("./file1")
+  value = filebase64("./file1")
 }
 
 output "basename" {
