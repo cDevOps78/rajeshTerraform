@@ -25,5 +25,5 @@
 #}
 
 output "names" {
-  value = templatefile("./file1",{names = ["chaitu1", "chaitu2", "chaitu3"]})
+  value = templatefile("./file1",{names = "chaitu"})
 }
