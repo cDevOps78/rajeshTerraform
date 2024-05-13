@@ -8,7 +8,6 @@
 #  name   = "DevOps321"
 #}
 
-
 output "name" {
-  value = max([var.numbers])
+  value = upper(var.numbers)
 }
