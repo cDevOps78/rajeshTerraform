@@ -1,4 +1,3 @@
-variable "name" {
-  default = "default-chaitu="
+variable "numbers" {
+  default = [100,30,60]
 }
-variable "name1" {}
