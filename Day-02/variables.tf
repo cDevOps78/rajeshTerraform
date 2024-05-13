@@ -1,3 +1,5 @@
 variable "name" {
-  default = "default-chaitu"
+  default = "default-chaitu="
 }
+
+variable "name1" {}
