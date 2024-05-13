@@ -10,5 +10,5 @@
 
 
 output "name" {
-  value = "max(${var.numbers})"
+  value = max(100,20,500)
 }
