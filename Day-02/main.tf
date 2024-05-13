@@ -11,3 +11,11 @@
 output "name" {
   value = file("./file1")
 }
+
+output "basename" {
+  value = basename("/root/name/fileee.xtx")
+}
+
+output "dirname" {
+  value = dirname("/root/name/fileee.xtx")
+}
