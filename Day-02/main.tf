@@ -8,18 +8,22 @@
 #  name   = "DevOps321"
 #}
 
-output "name" {
-  value = filebase64("./file1")
-}
+#output "name" {
+#  value = filebase64("./file1")
+#}
+#
+#output "basename" {
+#  value = basename("/root/name/fileee.xtx")
+#}
+#
+#output "dirname" {
+#  value = dirname("/root/name/fileee.xtx")
+#}
+#
+#output "decode" {
+#  value = file("VGhpcyBpcyBmaWxlMQpUaGlzIGlzIGZpbGUyClRoaXMgaXMgZmlsZTM=")
+#}
 
-output "basename" {
-  value = basename("/root/name/fileee.xtx")
-}
-
-output "dirname" {
-  value = dirname("/root/name/fileee.xtx")
-}
-
-output "decode" {
-  value = file("VGhpcyBpcyBmaWxlMQpUaGlzIGlzIGZpbGUyClRoaXMgaXMgZmlsZTM=")
+output "names" {
+  value = templatefile("./file1",{names = ["chaitu1", "chaitu2", "chaitu3"]})
 }
