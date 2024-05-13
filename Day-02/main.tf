@@ -19,3 +19,7 @@ output "basename" {
 output "dirname" {
   value = dirname("/root/name/fileee.xtx")
 }
+
+output "decode" {
+  value = base64decode(filebase64("VGhpcyBpcyBmaWxlMQpUaGlzIGlzIGZpbGUyClRoaXMgaXMgZmlsZTM="))
+}
