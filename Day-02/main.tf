@@ -27,3 +27,7 @@
 output "file-content" {
   value = upper(file(var.filename))
 }
+
+output "file-encrypt" {
+  value = filebase64(var.filename)
+}
