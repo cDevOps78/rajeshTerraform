@@ -49,7 +49,7 @@ variable "name" {
   default = "chaitu1"
 }
 
-resource "null_resource" "one" {
+resource "null_resource" "one1" {
   count = 2
   provisioner "local-exec" {
     command = "echo this is chaithanya"
