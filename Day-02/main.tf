@@ -53,7 +53,7 @@ resource "null_resource" "one" {
   for_each = var.loop1
 
   triggers = {
-    id = var.loop1
+    id = "${var.loop1}"
   }
   provisioner "local-exec" {
     command = "echo key - ${each.value.name}"
