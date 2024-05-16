@@ -39,7 +39,19 @@
 #output "file-decrypt" {
 #  value = base64decode(local.fileencrypt)
 #}
+#
+#output "template" {
+#  value = templatefile("file1.tpl",{name = ["chaitu"]})
+#}
 
-output "template" {
-  value = templatefile("file1.tpl",{name = ["chaitu"]})
+resource "template_file" "one" {
+  template = file("file1.tpl")
+
+  vars = {
+    name =  "chaithanya"
+  }
+}
+
+output "one-1" {
+  value = template_file.one.rendered
 }
