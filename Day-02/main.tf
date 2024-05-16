@@ -58,7 +58,7 @@ resource "null_resource" "one" {
   provisioner "local-exec" {
     command = <<EOF
             "echo key - ${each.key}"
-            "echo value - ${each.valu}"
+            "echo value - ${each.value}"
             EOF
   }
 }
