@@ -70,7 +70,7 @@ variable "loop1" {
     name2 = {
       name = "chaitu2"
     }
-    name1 = {
+    name3 = {
       name = "chaitu3"
     }
   }
