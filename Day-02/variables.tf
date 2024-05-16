@@ -1,3 +1,3 @@
-variable "numbers" {
-  default = "chaitu"
+variable "filename" {
+  default = "file1"
 }

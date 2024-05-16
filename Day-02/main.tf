@@ -24,6 +24,6 @@
 #  value = file("VGhpcyBpcyBmaWxlMQpUaGlzIGlzIGZpbGUyClRoaXMgaXMgZmlsZTM=")
 #}
 
-output "names" {
-  value = templatefile("file1",{names = "chaitu"})
+output "file-content" {
+  value = file(var.filename)
 }
