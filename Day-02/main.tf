@@ -56,7 +56,7 @@ resource "null_resource" "one" {
     id = timestamp()
   }
   provisioner "local-exec" {
-    command = "echo key - ${var.loop1[each.key].name}"
+    command = "echo key - ${each.value.name}"
 
   }
 }
