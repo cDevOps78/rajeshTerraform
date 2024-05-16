@@ -46,6 +46,9 @@
 #}
 
 resource "null_resource" "one" {
+  triggers = {
+    name = timestamp()
+  }
   provisioner "local-exec" {
     command = "echo this is chaithanya"
   }
