@@ -42,6 +42,6 @@
 #
 
 output "template" {
-  value = templatefile("file1.tpl",{ name = "chaitu" })
+  value = templatefile("file1.tpl",{ name = ["chaitu","chaitu2"] })
 }
 
