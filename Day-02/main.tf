@@ -46,7 +46,7 @@
 #}
 
 variable "name" {
-  default = "chaitu"
+  default = "chaitu1"
 }
 
 resource "null_resource" "one" {
