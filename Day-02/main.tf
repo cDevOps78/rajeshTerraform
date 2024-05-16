@@ -25,5 +25,5 @@
 #}
 
 output "file-content" {
-  value = file(var.filename)
+  value = upper(file(var.filename))
 }
