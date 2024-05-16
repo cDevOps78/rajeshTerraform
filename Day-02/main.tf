@@ -53,5 +53,5 @@ resource "template_file" "one" {
 }
 
 output "one-1" {
-  value = template_file.one.rendered
+  value = template_file.one
 }
