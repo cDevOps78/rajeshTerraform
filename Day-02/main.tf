@@ -56,19 +56,23 @@ resource "null_resource" "one" {
     id = timestamp()
   }
   provisioner "local-exec" {
-    command = <<EOF
-            "echo key - ${each.key}"
-            "echo value - ${each.value}"
-            EOF
+    command = "echo key - ${var.loop1[each.key]["name"]}"
+
   }
 }
 
 
 variable "loop1" {
   default = {
-    name1 = "chaitu1"
-    name2 = "chaitu2"
-    name3 = "chaitu3"
+    name1 = {
+      name = "chaitu1"
+    }
+    name2 = {
+      name = "chaitu2"
+    }
+    name1 = {
+      name = "chaitu3"
+    }
   }
 }
 
