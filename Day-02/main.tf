@@ -31,3 +31,11 @@ output "file-content" {
 output "file-encrypt" {
   value = filebase64(var.filename)
 }
+
+locals {
+  fileencrypt = filebase64(var.filename)
+}
+
+output "file-decrypt" {
+  value = base64decode(local.fileencrypt)
+}
