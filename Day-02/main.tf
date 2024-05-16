@@ -24,18 +24,27 @@
 #  value = file("VGhpcyBpcyBmaWxlMQpUaGlzIGlzIGZpbGUyClRoaXMgaXMgZmlsZTM=")
 #}
 
-output "file-content" {
-  value = upper(file(var.filename))
-}
+#output "file-content" {
+#  value = upper(file(var.filename))
+#}
+#
+#output "file-encrypt" {
+#  value = filebase64(var.filename)
+#}
+#
+#locals {
+#  fileencrypt = filebase64(var.filename)
+#}
+#
+#output "file-decrypt" {
+#  value = base64decode(local.fileencrypt)
+#}
 
-output "file-encrypt" {
-  value = filebase64(var.filename)
+module "module1" {
+  source = "./modules/module1"
+  filename = "./file1"
 }
-
-locals {
-  fileencrypt = filebase64(var.filename)
-}
-
-output "file-decrypt" {
-  value = base64decode(local.fileencrypt)
+module "module2" {
+  source = "./modules/module2"
+  passing = module.module1.mainvalue
 }
