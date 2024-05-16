@@ -3,5 +3,5 @@
 variable "filename" {}
 
 output "mainvalue" {
-  value = local.file_decrypt
+  value = "name is chaitu"
 }
