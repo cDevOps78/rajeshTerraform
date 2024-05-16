@@ -41,7 +41,14 @@
 #}
 #
 
-output "template" {
-  value = templatefile("file1.tpl",{ name = ["chaitu","chaitu2"] })
+#output "template" {
+#  value = templatefile("file1.tpl",{ name = ["chaitu","chaitu2"] })
+#}
+
+resource "null_resource" "one" {
+  provisioner "local-exec" {
+    command = "echo this is chaithanya"
+  }
 }
+
 
