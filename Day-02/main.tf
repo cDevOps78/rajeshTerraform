@@ -40,11 +40,14 @@
 #  value = base64decode(local.fileencrypt)
 #}
 
-module "module1" {
-  source = "./modules/module1"
-  filename = "./file1"
+locals {
+  encrypt_value = base64encode("This is chaithaya")
 }
-module "module2" {
-  source = "./modules/module2"
-  passing = element(module.module1.mainvalue,1)
+
+output "encrypt" {
+  value = local.encrypt_value
+}
+
+output "decrypt" {
+  value = base64decode(local.encrypt_value)
 }
