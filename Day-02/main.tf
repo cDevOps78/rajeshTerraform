@@ -56,7 +56,10 @@ resource "null_resource" "one" {
     id = timestamp()
   }
   provisioner "local-exec" {
-    command = "echo this is ${each.key}"
+    command = <<EOF
+            "echo key - ${each.key}"
+            "echo value - ${each.valu}"
+            EOF
   }
 }
 
