@@ -50,7 +50,7 @@ variable "name" {
 }
 
 resource "null_resource" "one" {
-  count = 1
+  count = 2
   provisioner "local-exec" {
     command = "echo this is chaithanya"
   }
