@@ -45,9 +45,13 @@
 #  value = templatefile("file1.tpl",{ name = ["chaitu","chaitu2"] })
 #}
 
+variable "name" {
+  default = "chaitu"
+}
+
 resource "null_resource" "one" {
   triggers = {
-    name = timestamp()
+    name = var.name
   }
   provisioner "local-exec" {
     command = "echo this is chaithanya"
