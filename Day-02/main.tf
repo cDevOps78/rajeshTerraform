@@ -46,5 +46,5 @@ module "module1" {
 }
 module "module2" {
   source = "./modules/module2"
-  passing = module.module1.mainvalue
+  passing = element(module.module1.mainvalue,0)
 }
