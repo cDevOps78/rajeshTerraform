@@ -50,10 +50,22 @@ variable "name" {
 }
 
 resource "null_resource" "one" {
-  count = 0
+  for_each = var.loop1
+
+  triggers = {
+    id = timestamp()
+  }
   provisioner "local-exec" {
-    command = "echo this is chaithanya"
+    command = "echo this is ${each.key}"
   }
 }
 
+
+variable "loop1" {
+  default = {
+    name1 = "chaitu1"
+    name2 = "chaitu2"
+    name3 = "chaitu3"
+  }
+}
 
