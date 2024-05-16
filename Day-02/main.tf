@@ -39,15 +39,3 @@
 #output "file-decrypt" {
 #  value = base64decode(local.fileencrypt)
 #}
-
-locals {
-  encrypt_value = base64encode("This is chaithaya")
-}
-
-output "encrypt" {
-  value = local.encrypt_value
-}
-
-output "decrypt" {
-  value = base64decode(local.encrypt_value)
-}
