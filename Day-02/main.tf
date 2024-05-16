@@ -39,3 +39,7 @@
 #output "file-decrypt" {
 #  value = base64decode(local.fileencrypt)
 #}
+
+output "template" {
+  value = templatefile("file1.tpl",{name = ["chaitu"]})
+}
