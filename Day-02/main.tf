@@ -50,9 +50,7 @@ variable "name" {
 }
 
 resource "null_resource" "one" {
-  triggers = {
-    name = var.name
-  }
+  count = 1
   provisioner "local-exec" {
     command = "echo this is chaithanya"
   }
