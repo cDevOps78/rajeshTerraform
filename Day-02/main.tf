@@ -74,14 +74,31 @@
 #      name = "chaitu3"
 #    }
 #  }
+##}
+#
+#module "name" {
+#  source = "./modules/module1"
+#  name = var.name1
+#}
+#
+#variable "name1" {
+#  default = "chairirir"
 #}
 
-module "name" {
-  source = "./modules/module1"
-  name = var.name1
+module "front" {
+  source = "./modules/module-app"
+  ami_m = var.ami
+  ami_instance_m = var.ami_instance_type
 }
 
-variable "name1" {
-  default = "chairirir"
+module "backend" {
+  source = "./modules/module-app"
+  ami_m = var.ami
+  ami_instance_m = "t2.micro"
 }
 
+module "mysql" {
+  source = "./modules/module-app"
+  ami_m = var.ami
+  ami_instance_m = var.ami_instance_type
+}
