@@ -85,20 +85,31 @@
 #  default = "chairirir"
 #}
 
-module "front" {
-  source = "./modules/module-app"
-  ami_m = var.ami
-  ami_instance_m = var.ami_instance_type
+#module "front" {
+#  source = "./modules/module-app"
+#  ami_m = var.ami
+#  ami_instance_m = var.ami_instance_type
+#}
+#
+#module "backend" {
+#  source = "./modules/module-app"
+#  ami_m = var.ami
+#  ami_instance_m = "t2.micro"
+#}
+#
+#module "mysql" {
+#  source = "./modules/module-app"
+#  ami_m = var.ami
+#  ami_instance_m = var.ami_instance_type
+#}
+
+module "frontend" {
+  source = "./modules/sample"
+  instance_type_m = var.instance_type
 }
 
 module "backend" {
-  source = "./modules/module-app"
-  ami_m = var.ami
-  ami_instance_m = "t2.micro"
+  source = "./modules/sample"
+  instance_type_m = var.instance_type
 }
 
-module "mysql" {
-  source = "./modules/module-app"
-  ami_m = var.ami
-  ami_instance_m = var.ami_instance_type
-}

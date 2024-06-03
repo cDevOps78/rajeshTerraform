@@ -4,3 +4,7 @@ variable "ami" {
 variable "ami_instance_type" {
   default = "t3.medium"
 }
+
+variable "instance_type" {
+  default = "t2.micro"
+}
