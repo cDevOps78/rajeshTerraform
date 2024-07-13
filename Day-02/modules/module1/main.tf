@@ -7,9 +7,9 @@ resource "null_resource" "sample2" {
 variable "name" {
   default = "modue-1"
 }
-output "nnn" {
-  value = var.name
-}
+#output "nnn" {
+#  value = var.name
+#}
 
 #resource "null_resource" "sample3" {
 #  provisioner "local-exec" {
