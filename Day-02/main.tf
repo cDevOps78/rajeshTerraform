@@ -129,7 +129,7 @@
 module "module-1" {
   source = "./modules/module1"
 }
-
-output "name" {
-  value = module.module-1.nnn
-}
+ module "module-2" {
+   source = "./modules/module2"
+   job = module.module-1.nnn
+ }

@@ -1,13 +1,7 @@
-resource "null_resource" "sample" {
+resource "null_resource" "module2" {
   provisioner "local-exec" {
-    command = "echo This module-2"
+    command = "echo This is from module2 and the value from moduel ${var.job}"
   }
 }
 
-variable "name" {
-  default = "terraform"
-}
-
-output "name_value" {
-  value = var.name
-}
+variable "job" {}
