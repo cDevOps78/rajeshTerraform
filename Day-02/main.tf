@@ -126,10 +126,22 @@
 #  value = module.sample.name_value
 #}
 
-module "module-1" {
+#module "module-1" {
+#  source = "./modules/module1"
+#}
+# module "module-2" {
+#   source = "./modules/module2"
+#   job = module.module-1.nnn
+# }
+
+module "front-instance" {
   source = "./modules/module1"
+  ami = var.amip
+  instance_type = var.instancep
 }
- module "module-2" {
-   source = "./modules/module2"
-   job = module.module-1.nnn
- }
+
+module "bcak-instance" {
+  source = "./modules/module1"
+  ami    = var.amip
+  instance_type = var.instancep
+}

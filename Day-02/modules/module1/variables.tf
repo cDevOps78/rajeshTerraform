@@ -9,3 +9,8 @@
 #output "mainvalue" {
 #  value = var.list
 #}
+
+variable "ami" {
+  default = "ami-99999999"
+}
+variable "instance_type" {}
