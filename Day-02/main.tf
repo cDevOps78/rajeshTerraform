@@ -129,3 +129,7 @@
 module "module-1" {
   source = "./modules/module1"
 }
+
+output "name" {
+  value = module.module-1.nnn
+}
