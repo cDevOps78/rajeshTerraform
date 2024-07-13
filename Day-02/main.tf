@@ -116,12 +116,16 @@
 #
 #output "name" {
 #  value = lookup(mod
+##}
+#
+#module "sample" {
+#  source = "./modules/module2"
+#}
+#
+#output "root_name" {
+#  value = module.sample.name_value
 #}
 
-module "sample" {
-  source = "./modules/module2"
-}
-
-output "root_name" {
-  value = module.sample.name_value
+module "module-1" {
+  source = "./modules/module1"
 }

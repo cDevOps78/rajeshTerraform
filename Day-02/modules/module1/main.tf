@@ -1,7 +1,14 @@
 resource "null_resource" "sample2" {
   provisioner "local-exec" {
-    command = "echo This is resource -1 - ${var.name}"
+    command = "echo This is resource -1 module1"
   }
+}
+
+variable "name" {
+  default = "modue-1"
+}
+output "nnn" {
+  value = var.name
 }
 
 #resource "null_resource" "sample3" {
