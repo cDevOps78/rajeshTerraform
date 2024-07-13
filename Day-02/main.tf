@@ -121,3 +121,7 @@
 module "sample" {
   source = "./modules/module2"
 }
+
+output "root_name" {
+  value = module.sample.name_value
+}
