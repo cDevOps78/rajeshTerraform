@@ -103,13 +103,21 @@
 #  ami_instance_m = var.ami_instance_type
 #}
 
-module "frontend" {
-  source = "./modules/sample"
-  instance_type_m = var.instance_type
-}
+#module "frontend" {
+#  source = "./modules/sample"
+#  instance_type_m = var.instance_type
+#}
+#
+#module "backend" {
+#  source = "./modules/sample"
+#  instance_type_m = var.instance_type
+#}
 
-module "backend" {
-  source = "./modules/sample"
-  instance_type_m = var.instance_type
-}
+#
+#output "name" {
+#  value = lookup(mod
+#}
 
+module "sample" {
+  source = "./modules/module2"
+}

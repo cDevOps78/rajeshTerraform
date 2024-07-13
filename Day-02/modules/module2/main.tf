@@ -1,7 +1,7 @@
-resource "null_resource" "top" {
-  provisioner "local-exec" {
-    command = "echo This module from1 vaule ${var.passing}"
-  }
+variable "name" {
+  default = "terraform"
 }
 
-variable "passing" {}
+output "name_value" {
+  value = var.name
+}
