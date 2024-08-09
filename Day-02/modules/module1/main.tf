@@ -22,7 +22,19 @@
 #  file_decrypt = filebase64(var.filename)
 #}
 
-resource "aws_instance" "sample" {
-  ami           = var.ami
-  instance_type = var.instance_type
+resource "a" "" {}
+
+
+
+function name (str.name="job"){
+
+        print "namr"
 }
+
+
+name(name="hhchchch")
+
+name(name="slldlskd")
+
+name(name="sldls")
+

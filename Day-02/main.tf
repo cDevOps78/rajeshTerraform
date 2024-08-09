@@ -140,8 +140,8 @@ module "front-instance" {
   instance_type = var.instancep
 }
 
-module "bcak-instance" {
+module "front-instance" {
   source = "./modules/module1"
-  ami    = var.amip
+  ami = var.amip
   instance_type = var.instancep
 }
